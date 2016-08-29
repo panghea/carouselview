@@ -293,6 +293,13 @@ public class CarouselView extends FrameLayout {
         }
 
         @Override
+        public void destroyItem(View collection, int position, Object o) {
+            View view = (View)o;
+            ((ViewPager) collection).removeView(view);
+            view = null;
+        }
+
+        @Override
         public Object instantiateItem(ViewGroup collection, int position) {
 
             Object objectToReturn;
